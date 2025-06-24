@@ -194,4 +194,4 @@ cython_debug/
 .cursorindexingignore
 
 # フォルダ除外
-/images/
+/gatya/images/
