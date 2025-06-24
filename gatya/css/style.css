@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  /* background-color: #f4f4f4; */
+  background: black;
+  padding-top: 384px; /* 上に余白を追加 */
+}
+
+.slot-machine {
+  width: 780px; /* 1画像分の幅 */
+  height: 195px; /* 画像の高さ */
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  /* border-radius: 10px; */
+  background: black;
+  position: relative;
+}
+
+/* 左右にブラー効果を適用するためのオーバーレイ */
+.slot-machine::before,
+.slot-machine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 218px; /* ブラー効果をかける部分の幅 */
+  background: rgba(255, 255, 255, 0.5); /* 半透明の背景 */
+  backdrop-filter: blur(1px); /* 背景にブラーをかける */
+  z-index: 1; /* スロットマシンの内容より前に表示 */
+}
+
+/* 左端のオーバーレイ */
+.slot-machine::before {
+  left: 0;
+}
+
+/* 右端のオーバーレイ */
+.slot-machine::after {
+  right: 0;
+}
+
+.image-container {
+  display: flex; /* 横方向に配置 */
+  position: absolute;
+  column-gap: 10px;
+  padding-top: 16px;
+}
+
+.reel {
+  transition: transform 1s ease-out; /* スライドアニメーション */
+}
+
+.reel img {
+  width: 162px; /* 画像の幅 */
+  height: 162px; /* 画像の高さ */
+  border: 1px solid #fff; /* 白いボーダーを追加 */
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;  /* 横方向中央に配置 */
+  width: 2px; /* 線の幅 */
+  background-color: red; /* 線の色 */
+  z-index: 2; /* 最前面に表示 */
+}
