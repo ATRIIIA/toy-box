@@ -1,3 +1,3 @@
 # toy-box
 toy box  
-(gatya)[/gatya/readme-ja.md]
+[gatya](gatya/README-ja.md) 
